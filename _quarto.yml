@@ -1,36 +1,22 @@
-name: Publish Quarto site to GitHub Pages
+project:
+  type: website
+  output-dir: _site
 
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+website:
+  title: "Mismas estadísticas, gráficos distintos"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: explainer.qmd
+        text: Explicación
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render
-        uses: quarto-dev/quarto-actions/render@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: assets/style.css
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+          <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
