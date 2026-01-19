@@ -1,0 +1,33 @@
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  
+  #chart {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  .stats {
+    margin-top: 1rem;
+  }
+  
+  .stats table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 720px;
+  }
+  
+  .stats th, .stats td {
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+  }
+  
+  .toggle {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+  }

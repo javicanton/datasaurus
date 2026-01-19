@@ -1,0 +1,9 @@
+website:
+  site-url: "https://javicanton.github.io/datasaurus"
+  title: "Mismas estadísticas, gráficos distintos"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: explainer.qmd
+        text: Explicación

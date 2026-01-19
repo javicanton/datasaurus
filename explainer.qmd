@@ -1,0 +1,21 @@
+---
+title: "Qué está pasando aquí"
+---
+
+## La idea clave
+
+Dos conjuntos de puntos pueden compartir:
+
+- media de *x* y de *y*
+- desviación típica de *x* y de *y*
+- correlación de Pearson
+- recta de regresión lineal (*y = a + b·x*)
+
+…y aun así tener **formas** totalmente distintas: curvaturas, agrupamientos, valores atípicos, estructuras en “X”, etc.
+
+## Qué aprender (para clase o práctica)
+
+1. Nunca te quedes solo con el resumen numérico.
+2. Dibuja siempre el diagrama de dispersión antes de modelar.
+3. Comprueba sensibilidad a valores atípicos.
+4. Si el patrón parece no lineal, prueba alternativas (transformaciones o modelos no lineales).
