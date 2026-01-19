@@ -11,7 +11,42 @@ Dos conjuntos de puntos pueden compartir:
 - correlación de Pearson
 - recta de regresión lineal (*y = a + b·x*)
 
-…y aun así tener **formas** totalmente distintas: curvaturas, agrupamientos, valores atípicos, estructuras en “X”, etc.
+…y aun así tener **formas** totalmente distintas: curvaturas, agrupamientos, valores atípicos, estructuras geométricas o patrones no lineales.
+
+La clave es simple: muchas estadísticas **resumen** (comprimen) y, al hacerlo, pierden información sobre la forma.
+
+## ¿Qué significa “misma recta de regresión”?
+
+Si dos conjuntos generan un `a` (intercepto) y un `b` (pendiente) muy parecidos, la recta estimada puede coincidir casi por completo.
+
+Pero eso **no** implica que el modelo sea apropiado en ambos casos. Una recta puede salir “parecida” por:
+
+- una nube aproximadamente lineal,
+- una relación curvilínea que “se disfraza” de lineal al resumir,
+- un punto atípico que tira de la recta,
+- dos grupos distintos mezclados.
+
+## Lo que el resumen numérico no te cuenta
+
+### 1) No linealidad
+Una correlación moderada puede aparecer tanto en una relación lineal real como en una curva.
+
+### 2) Subpoblaciones (mezclas)
+Dos grupos separados pueden producir una correlación global engañosa, ocultando patrones internos distintos.
+
+### 3) Valores atípicos y puntos influyentes
+Un solo punto puede alterar de manera fuerte la pendiente y la correlación.
+
+### 4) Dispersión variable
+La variabilidad puede crecer o disminuir con *x*. El resumen “promedia” ese comportamiento.
+
+## Mini-guía para leer un diagrama de dispersión
+
+1. Identifica el **patrón global**: ¿tendencia clara o nube?
+2. Busca **curvatura**: ¿una recta parece una buena aproximación?
+3. Detecta **puntos raros**: especialmente lejos del resto.
+4. Observa si hay **grupos**: nubes separadas, bandas, etc.
+5. Comprueba si la dispersión es similar en todo el rango de *x*.
 
 ## Qué aprender (para clase o práctica)
 
@@ -19,3 +54,9 @@ Dos conjuntos de puntos pueden compartir:
 2. Dibuja siempre el diagrama de dispersión antes de modelar.
 3. Comprueba sensibilidad a valores atípicos.
 4. Si el patrón parece no lineal, prueba alternativas (transformaciones o modelos no lineales).
+5. Cuando informes resultados, acompaña números con un gráfico que muestre la estructura.
+
+## Cierre
+
+No se trata de elegir entre “números o gráficos”, sino de entender que **se complementan**.  
+El resumen numérico orienta; el gráfico verifica, contextualiza y evita interpretaciones erróneas.

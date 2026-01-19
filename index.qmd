@@ -1,9 +1,81 @@
-website:
-  site-url: "https://javicanton.github.io/datasaurus"
-  title: "Mismas estadísticas, gráficos distintos"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Inicio
-      - href: explainer.qmd
-        text: Explicación
+---
+title: "Mismas estadísticas, gráficos distintos"
+---
+
+Hay conjuntos de datos que pueden compartir medias, desviaciones típicas, correlación e incluso la misma recta de regresión… y aun así **dibujar historias visuales completamente diferentes**.
+
+La idea no es “desconfiar de la estadística”, sino entender sus límites: **un resumen numérico comprime información**. El gráfico (y en particular el diagrama de dispersión) te devuelve parte de lo que se pierde.
+
+## Demo interactiva
+
+1) Elige un conjunto (Anscombe o Datasaurus).  
+2) Observa el patrón.  
+3) Mira la tabla: verás que estadísticas muy parecidas pueden corresponder a formas opuestas.
+
+<div class="controls">
+  <label for="datasetSelect">Conjunto:</label>
+  <select id="datasetSelect"></select>
+
+  <label class="toggle">
+    <input type="checkbox" id="showRegression" checked>
+    Mostrar recta de regresión
+  </label>
+</div>
+
+<div id="chart"></div>
+
+<div class="stats">
+  <h3>Estadísticas</h3>
+  <div id="statsTable"></div>
+</div>
+
+<script type="module" src="assets/app.js"></script>
+
+## Qué debes mirar en el gráfico
+
+Cuando cambias de conjunto, fíjate en:
+
+- **Forma global**: ¿lineal, curva, “nube”, estructura geométrica?
+- **Agrupamientos**: ¿hay grupos separados (subpoblaciones)?
+- **Valores atípicos**: ¿hay puntos raros? ¿dominan el patrón?
+- **Dispersión variable**: ¿se abre/cierra el abanico (heterocedasticidad)?
+- **Simetrías y “dibujos”**: ¿aparecen formas reconocibles?
+
+## El cuarteto de Anscombe
+
+El cuarteto de Anscombe es un clásico porque muestra cuatro conjuntos con estadísticas casi idénticas, pero con patrones visuales muy distintos.
+
+Si estás aprendiendo regresión, es una lección directa: dos conjuntos pueden producir la “misma” recta estimada, pero por razones totalmente diferentes (curvatura, un punto influyente, etc.).
+
+## Datasaurus Dozen
+
+Datasaurus (y sus variantes) lleva la idea al extremo: conjuntos de puntos con estadísticas muy similares capaces de “dibujar” figuras (un dinosaurio, un círculo, una estrella…).
+
+La moraleja es la misma, pero más memorable: **si solo miras el resumen numérico, te pierdes la estructura**.
+
+## Conclusión práctica
+
+Antes de interpretar una correlación o una regresión:
+
+1. **Grafica** (siempre).
+2. Busca **valores atípicos** y **puntos influyentes**.
+3. Comprueba si el patrón es razonablemente **lineal**.
+4. Si no lo es, plantea alternativas: transformaciones o modelos no lineales.
+5. Documenta lo que ves: el gráfico también es evidencia.
+
+## Ideas rápidas para clase
+
+- “Sin mirar la tabla: ¿dirías que aquí la regresión lineal tiene sentido?”
+- “¿Qué punto cambiaría por completo la interpretación si lo quitáramos?”
+- “¿Qué conjunto te engañaría más si solo te dieran `r` y la recta?”
+
+## Descargas y reproducibilidad
+
+- El sitio carga los datos desde archivos en `data/`.
+- Puedes reutilizar la estructura con tus propios CSV (mismas columnas: `dataset`, `x`, `y`).
+
+## Créditos y referencias
+
+- F. J. Anscombe (1973), *Graphs in Statistical Analysis*.
+- Matejka & Fitzmaurice (2017), *Same Stats, Different Graphs*.
+- Paquete `datasauRus` (CRAN) como fuente práctica del Datasaurus Dozen.
